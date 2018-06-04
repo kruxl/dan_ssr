@@ -1,8 +1,8 @@
 {
-  "name": "page-transitions-travelapp",
+  "name": "dan-ssr",
   "version": "1.0.0",
-  "description": "Native-like Page Transitions with Vue and Nuxt, A Travel App",
-  "author": "sdras <sarah.drasner@gmail.com>",
+  "description": "Nuxt + Firebase",
+  "author": "kruxl <andrei.soimareanu@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
