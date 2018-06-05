@@ -5,9 +5,9 @@
     @enter="enter"
     :css="false">
     <div class="menudrawer" v-if="menuOpened">
-      <nuxt-link exact to="/">{{ selectedUser.name | firstName }}'s Home</nuxt-link><br>
-      <nuxt-link to="/place">{{ selectedUser.name | firstName }}'s Places</nuxt-link><br>
-      <nuxt-link to="/group">{{ selectedUser.name | firstName }}'s Group Trips</nuxt-link>
+      <nuxt-link exact to="/cursuri">{{ selectedUser.name | firstName }}'s Home</nuxt-link><br>
+      <nuxt-link to="/cursuri/place">{{ selectedUser.name | firstName }}'s Places</nuxt-link><br>
+      <nuxt-link to="/cursuri/group">{{ selectedUser.name | firstName }}'s Group Trips</nuxt-link>
     </div>
   </transition>
 </template>

@@ -1,22 +1,22 @@
 <template>
   <header :class="{ 
-    'place' : (page === 'place'), 
-    'group' : (page === 'group'), 
-    'index' : (page === 'index') 
+    'place' : (page === 'cursuri/place'), 
+    'group' : (page === 'cursuri/group'), 
+    'index' : (page === 'cursuri/index') 
   }">
 
     <transition-group name="bk" tag="div" class="bk-img">
-      <div key="img1" v-if="page === 'index'" class="header-img1"></div>
-      <div key="img2" v-else-if="page === 'place'" class="header-img2"></div>
+      <div key="img1" v-if="page === 'cursuri/index'" class="header-img1"></div>
+      <div key="img2" v-else-if="page === 'cursuri/place'" class="header-img2"></div>
       <div key="img3" v-else class="header-img3"></div>
     </transition-group>
 
     <div class="nav-wrapper">
       <nav>
         <ul>
-          <nuxt-link exact to="/"><li>{{ selectedUser.name | firstName }}'s Home</li></nuxt-link>
-          <nuxt-link to="/place"><li>{{ selectedUser.name | firstName }}'s Places</li></nuxt-link>
-          <nuxt-link to="/group"><li>{{ selectedUser.name | firstName }}'s Group Trips</li></nuxt-link>
+          <nuxt-link exact to="/cursuri"><li>{{ selectedUser.name | firstName }}'s Home</li></nuxt-link>
+          <nuxt-link to="/cursuri/place"><li>{{ selectedUser.name | firstName }}'s Places</li></nuxt-link>
+          <nuxt-link to="/cursuri/group"><li>{{ selectedUser.name | firstName }}'s Group Trips</li></nuxt-link>
         </ul>
 
         <div @click="menuOpened = !menuOpened">
