@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      page: '/cursuri/index',
+      page: 'cursuri-index',
       indexedUser: 0,
       users: [
         {

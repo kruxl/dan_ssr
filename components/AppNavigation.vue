@@ -1,13 +1,13 @@
 <template>
   <header :class="{ 
-    'place' : (page === 'cursuri/place'), 
-    'group' : (page === 'cursuri/group'), 
-    'index' : (page === 'cursuri/index') 
+    'place' : (page === 'cursuri-place'), 
+    'group' : (page === 'cursuri-group'), 
+    'index' : (page === 'cursuri-index') 
   }">
 
     <transition-group name="bk" tag="div" class="bk-img">
-      <div key="img1" v-if="page === 'cursuri/index'" class="header-img1"></div>
-      <div key="img2" v-else-if="page === 'cursuri/place'" class="header-img2"></div>
+      <div key="img1" v-if="page === 'cursuri-index'" class="header-img1"></div>
+      <div key="img2" v-else-if="page === 'cursuri-place'" class="header-img2"></div>
       <div key="img3" v-else class="header-img3"></div>
     </transition-group>
 
@@ -28,7 +28,7 @@
 
         <app-nav-transition />
 
-        <app-stats v-if="page === 'index'" :selectedUser="selectedUser" />
+        <app-stats v-if="page === 'cursuri-index'" :selectedUser="selectedUser" />
       </nav>
     </div>
   </header>
