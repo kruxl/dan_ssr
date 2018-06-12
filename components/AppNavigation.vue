@@ -1,22 +1,24 @@
 <template>
   <header :class="{ 
-    'place' : (page === 'cursuri-place'), 
-    'group' : (page === 'cursuri-group'), 
-    'index' : (page === 'cursuri-index') 
+    'place' : (page === 'cursuri-detaliicurs'), 
+    'group' : (page === 'cursuri'), 
+    'index' : (page === 'cursuri-numecurs') 
   }">
 
     <transition-group name="bk" tag="div" class="bk-img">
-      <div key="img1" v-if="page === 'cursuri-index'" class="header-img1"></div>
-      <div key="img2" v-else-if="page === 'cursuri-place'" class="header-img2"></div>
+      <div key="img1" v-if="page === 'cursuri'" class="header-img1"></div>
+      <div key="img2" v-else-if="page === 'cursuri-numecurs'" class="header-img2"></div>
+      <div key="img2" v-else-if="page === 'index'" class="header-img2"></div>
       <div key="img3" v-else class="header-img3"></div>
     </transition-group>
 
     <div class="nav-wrapper">
       <nav>
         <ul>
-          <nuxt-link exact to="/cursuri"><li>{{ selectedUser.name | firstName }}'s Home</li></nuxt-link>
-          <nuxt-link to="/cursuri/place"><li>{{ selectedUser.name | firstName }}'s Places</li></nuxt-link>
-          <nuxt-link to="/cursuri/group"><li>{{ selectedUser.name | firstName }}'s Group Trips</li></nuxt-link>
+          <nuxt-link v-if="page !== 'index'" to="/"><li>Home</li></nuxt-link>
+          <nuxt-link to="/cursuri"><li>{{ selectedUser.name | firstName }} ALTE CURSURI</li></nuxt-link>
+          <nuxt-link exact to="/cursuri/nume_curs"><li>{{ selectedUser.name | firstName }} CURS</li></nuxt-link>
+          <nuxt-link to="/cursuri/detalii_curs"><li>{{ selectedUser.name | firstName }} DESCRIERE</li></nuxt-link>
         </ul>
 
         <div @click="menuOpened = !menuOpened">
@@ -26,9 +28,9 @@
         </div>
         <app-menu-drawer :menuOpened="menuOpened" />
 
-        <app-nav-transition />
+        <app-nav-transition v-if="page !== 'index'"/>
 
-        <app-stats v-if="page === 'cursuri-index'" :selectedUser="selectedUser" />
+        <app-stats v-if="page === 'cursuri-numecurs'" :selectedUser="selectedUser" />
       </nav>
     </div>
   </header>

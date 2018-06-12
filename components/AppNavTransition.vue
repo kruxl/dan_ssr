@@ -16,12 +16,12 @@
     </button>
 
     <h2 key="profile-name" class="profile-name">
-      <span v-if="page === 'cursuri-group'" class="user-trip">{{ selectedUser.trips[0] }}</span>
+      <span v-if="page === 'cursuri-numecurs'" class="user-trip">{{ selectedUser.trips[0] }}</span>
       <span v-else>{{ selectedUser.name }}</span>
     </h2>
 
     <div @click="addPlace" class="side-icon" key="sideicon">
-      <icon-base v-if="page === 'cursuri-index'" icon-name="mail" icon-color="white" width="22" height="22">
+      <icon-base v-if="page === 'cursuri-numecurs'" icon-name="mail" icon-color="white" width="22" height="22">
         <icon-mail />
       </icon-base>
 
@@ -82,7 +82,7 @@ export default {
   methods: {
     changeUser(i) {
       this.$store.commit('changeUser', i)
-      if (this.page === 'cursuri-group') {
+      if (this.page === 'index') {
         const el = this.$refs.profile0[0]
         el.style.transform = `translate3d(${-70 +
           this.indexedUser * 55}px, -70px, 0) scale(0.25)`
@@ -97,7 +97,7 @@ export default {
       this.following = !this.following
     },
     addPlace() {
-      if (!this.saved && this.page !== 'cursuri-index') {
+      if (!this.saved && this.page !== 'cursuri-detaliicurs') {
         this.addAnimation()
         this.saved = true
       } else {

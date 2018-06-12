@@ -1,6 +1,5 @@
 <template>
   <main>
-
     <div class="places">
       <p class="top">{{ users[0].name }}'s Places</p>
       <h1>{{ places[0].name }}</h1>
@@ -20,7 +19,6 @@
         <hr />
       </div>
     </aside>
-
   </main>
 </template>
 
