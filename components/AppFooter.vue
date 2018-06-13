@@ -1,6 +1,6 @@
 <template>
   <footer>
-    Made by <a href="https://twitter.com/sarah_edo" target="_blank">sarah_edo</a>. This project is open source, visit <a href="https://github.com/sdras/page-transitions-travelapp" target="_blank">the repo.</a>
+    Made by Andrei with &#x2764;. Danyelle Cooking, all rights reserved.
   </footer>
 </template>
 

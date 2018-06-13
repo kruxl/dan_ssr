@@ -8,7 +8,7 @@
     <transition-group name="bk" tag="div" class="bk-img">
       <div key="img1" v-if="page === 'cursuri'" class="header-img1"></div>
       <div key="img2" v-else-if="page === 'cursuri-numecurs'" class="header-img2"></div>
-      <div key="img2" v-else-if="page === 'index'" class="header-img2"></div>
+      <div key="img2" v-else-if="page === 'index'" class="header-img4"></div>
       <div key="img3" v-else class="header-img3"></div>
     </transition-group>
 
@@ -185,6 +185,10 @@ header {
 
 .header-img3 {
   @include header('/header3.jpg');
+}
+
+.header-img4 {
+  @include header('/header-main.jpg');
 }
 
 .bk-enter-active,

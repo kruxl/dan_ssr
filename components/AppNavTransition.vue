@@ -16,8 +16,9 @@
     </button>
 
     <h2 key="profile-name" class="profile-name">
-      <span v-if="page === 'cursuri-numecurs'" class="user-trip">{{ selectedUser.trips[0] }}</span>
-      <span v-else>{{ selectedUser.name }}</span>
+      <!-- <span v-if="page === 'cursuri-numecurs'" class="user-trip">{{ selectedUser.trips[0] }}</span> -->
+      <!-- <span v-else>{{ selectedUser.name }}</span> -->
+      <span>{{ selectedUser.name }}</span>
     </h2>
 
     <div @click="addPlace" class="side-icon" key="sideicon">
@@ -72,7 +73,8 @@ export default {
       follow: 'follow',
       followclass: 'active-follow',
       activeUser: 'profile-photo',
-      secondaryUser: 'profile-photo-secondary'
+      secondaryUser: 'profile-photo-secondary',
+      classObject: 'tst'
     }
   },
   computed: {
@@ -82,8 +84,9 @@ export default {
   methods: {
     changeUser(i) {
       this.$store.commit('changeUser', i)
-      if (this.page === 'index') {
-        const el = this.$refs.profile0[0]
+      if (this.page === 'cursuri') {
+      const el = this.$refs.profile0[0]
+//        const el = this.$data.classObject
         el.style.transform = `translate3d(${-70 +
           this.indexedUser * 55}px, -70px, 0) scale(0.25)`
       }

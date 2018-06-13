@@ -2,17 +2,17 @@
   <main>
     <div class="places">
       <p class="top">{{ users[0].name }}'s Places</p>
-      <h1>{{ places[0].name }}</h1>
-      <p><strong>Rating: {{ places[0].rating }}</strong></p>
+      <h1>{{ users.places[0].name }}</h1>
+      <p><strong>Rating: {{ users.places[0].rating }}</strong></p>
       <div class="stars"><app-star-rating /></div>
 
       <div class="main-img"></div>
-      <p>{{ places[0].description }}</p>
+      <p>{{ users.places[0].description }}</p>
     </div>
 
     <aside class="sidebar">
       <h3>Other Trips</h3>
-      <div v-for="place in places" class="location" :key="place.name">
+      <div v-for="place in users.places" class="location" :key="place.name">
         <img :src="place.img" :alt="place.name" />
         <p class="top"><strong>{{ place.name }}</strong></p>
         <p>{{ place.description }}</p>

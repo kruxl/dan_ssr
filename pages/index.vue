@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="places" ref="places">
-      <div v-for="place in places" class="location" :key="place.name">
+      <div v-for="place in users.places" class="location" :key="place.name">
         <img :src="place.img" :alt="place.name" />
         <h2>{{ place.name }}</h2>
         <p><strong>Rating: {{ place.rating }}</strong></p>
@@ -28,7 +28,7 @@ export default {
     IconBase,
     IconMapPin
   },
-  computed: mapState(['page', 'users', 'places']),
+  computed: mapState(['page', 'users', 'users.places']),
   mounted() {
 //    var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js')
 //    mapboxgl.accessToken =
