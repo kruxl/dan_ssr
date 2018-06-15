@@ -1,25 +1,35 @@
 <template>
   <main>
     <div class="places" ref="places">
-      <div v-for="place in users.places" class="location" :key="place.name">
-        <img :src="place.img" :alt="place.name" />
-        <h2>{{ place.name }}</h2>
-        <p><strong>Rating: {{ place.rating }}</strong></p>
-        <p>{{ place.description }}</p>
+      <div v-for="place in users" :key="place.name">
+        <div class="location">
+          <img :src="place.img" :alt="place.name" />
+          <h1>{{ place.name }}</h1>
+          <p><strong>Rating: {{ place.rating }}</strong></p>
+          <p>{{ place.bio }}</p>
+          <nuxt-link to="cursuri/nume_curs">-> mergi la curs</nuxt-link>
+        </div>
+        <div  class="module">
+          <div v-for="modul in place.places" :key="modul.name">
+            <p>{{ modul.name }}</p>
+            <p>{{ modul.description }}</p>
+          </div>
+        </div>
         <hr />
       </div>
     </div>
-    <div class="mapcontain" ref="mapcontain">
+    <!-- <div class="mapcontain" ref="mapcontain">
       <p>
         <icon-base icon-name="mappin"><icon-map-pin /></icon-base> 
         Checked in at Honolulu location
       </p>
-    </div>
+    </div> -->
   </main>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 import IconBase from '~/components/IconBase.vue'
 import IconMapPin from '~/components/IconMapPin.vue'
 
@@ -28,8 +38,11 @@ export default {
     IconBase,
     IconMapPin
   },
-  computed: mapState(['page', 'users', 'users.places']),
-  mounted() {
+  computed: {
+    ...mapState(['page', 'users']),
+    ...mapGetters(['selectedUser'])
+  },
+   mounted() {
 //    var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js')
 //    mapboxgl.accessToken =
 //      'pk.eyJ1Ijoic2RyYXNuZXIiLCJhIjoiY2pmZzBqZmptMjI1eTMzbWl1bGExMHppZyJ9.diPXryPOiyMuqcV4mpNOlg'
@@ -48,6 +61,11 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+.module {
+  clear:both;
+}
+
+
 main {
   padding-top: 20px;
   border-top: 1px solid #ddd;

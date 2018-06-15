@@ -1,29 +1,31 @@
 <template>
   <main>
     <div class="places">
-      <p class="top">{{ users[0].name }}'s Places</p>
-      <h1>{{ users.places[0].name }}</h1>
-      <p><strong>Rating: {{ users.places[0].rating }}</strong></p>
+      <p class="top">{{ selectedUser.name }}'s Places</p>
+      <h1>{{ selectedUser.module[currentModule].name }}</h1>
+      <p><strong>Rating: {{ selectedUser.module[currentModule].rating }}</strong></p>
       <div class="stars"><app-star-rating /></div>
 
       <div class="main-img"></div>
-      <p>{{ users.places[0].description }}</p>
+      <p>{{ selectedUser.module[currentModule].description }}</p>
     </div>
 
     <aside class="sidebar">
       <h3>Other Trips</h3>
-      <div v-for="place in users.places" class="location" :key="place.name">
-        <img :src="place.img" :alt="place.name" />
-        <p class="top"><strong>{{ place.name }}</strong></p>
-        <p>{{ place.description }}</p>
-        <hr />
+      <div v-for="user in users" class="location" :key="user">
+          <div v-for="modul in user.module" :key="modul.name">
+            <img :src="modul.img" :alt="modul.name" />
+            <p class="top"><strong>{{ modul.name }}</strong></p>
+            <p>{{ modul.description }}</p>
+            <hr />
+        </div>
       </div>
     </aside>
   </main>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import IconBase from '~/components/IconBase.vue'
 import IconMapPin from '~/components/IconMapPin.vue'
 import AppStarRating from '~/components/AppStarRating.vue'
@@ -34,7 +36,20 @@ export default {
     IconMapPin,
     AppStarRating
   },
-  computed: mapState(['page', 'users', 'places'])
+  data() {
+    return {
+      currentModule: 0
+    }
+  },
+  methods: {
+    switchModule() {
+
+    }
+  },
+  computed: {
+    ...mapState(['page', 'users']),
+    ...mapGetters(['selectedUser'])
+  }
 }
 </script>
 

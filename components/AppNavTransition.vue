@@ -73,8 +73,7 @@ export default {
       follow: 'follow',
       followclass: 'active-follow',
       activeUser: 'profile-photo',
-      secondaryUser: 'profile-photo-secondary',
-      classObject: 'tst'
+      secondaryUser: 'profile-photo-secondary'
     }
   },
   computed: {
