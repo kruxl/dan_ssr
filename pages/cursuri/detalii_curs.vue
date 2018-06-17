@@ -6,20 +6,19 @@
       <p><strong>Rating: {{ selectedUser.module[currentModule].rating }}</strong></p>
       <div class="stars"><app-star-rating /></div>
 
-      <div class="main-img"></div>
+      <img class="main-img" :src="selectedUser.module[currentModule].img" />
       <p>{{ selectedUser.module[currentModule].description }}</p>
     </div>
 
     <aside class="sidebar">
-      <h3>Other Trips</h3>
-      <div v-for="user in users" class="location" :key="user">
-          <div v-for="modul in user.module" :key="modul.name">
-            <img :src="modul.img" :alt="modul.name" />
-            <p class="top"><strong>{{ modul.name }}</strong></p>
-            <p>{{ modul.description }}</p>
+      <h3>Alte module din curs</h3>
+          <div v-for="modul in moduleFilter" :key="modul.id">
+            <div @click="switchModule(modul.id)" class="pointer">
+              <p class="top"><strong>{{ modul.name }}</strong></p>
+              <p>{{ modul.description }}</p>
+            </div>
             <hr />
         </div>
-      </div>
     </aside>
   </main>
 </template>
@@ -41,14 +40,20 @@ export default {
       currentModule: 0
     }
   },
-  methods: {
-    switchModule() {
-
-    }
-  },
   computed: {
     ...mapState(['page', 'users']),
-    ...mapGetters(['selectedUser'])
+    ...mapGetters(['selectedUser']),
+    moduleFilter: function() {
+        let cm = this.currentModule
+        return this.selectedUser.module.filter(function(i) {
+          return i.id != cm
+        })
+    }
+  },
+  methods: {
+    switchModule(i) {
+      return this.currentModule = i
+    }
   }
 }
 </script>
@@ -72,7 +77,7 @@ p,
 }
 
 .main-img {
-  background: url('/header1.jpg') center center;
+  background: center center;
   background-size: cover;
   width: 100%;
   height: 240px;
@@ -80,5 +85,9 @@ p,
 
 .top {
   margin: 30px 0 0;
+}
+
+.pointer {
+  cursor: pointer;
 }
 </style>

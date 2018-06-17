@@ -78,6 +78,7 @@ const createStore = () => {
           trips: ['Honolulu', 'Peru', 'San Francisco'],
           module: [
             {
+              id: 0,
               name: 'Modul 1',
               stars: 4,
               rating: 8.9,
@@ -86,6 +87,7 @@ const createStore = () => {
                 'Ocean breezes rustle palm trees along the harborfront, while in the cool, mist-shrouded Koʻolau Range, forested hiking trails offer postcard city views. At sunset, cool off with an amble around Magic Island or splash in the ocean at Ala Moana Beach.'
             },
             {
+              id: 1,
               name: 'Modul 2',
               stars: 4,
               rating: 7.8,
@@ -94,6 +96,7 @@ const createStore = () => {
                 'With multicoloured cliffs soaring above a sea-drowned caldera, Santorini looks like a giant slab of layered cake. The main island of Thira will take your breath away with its snow-drift of white Cycladic houses lining the cliff tops and, in module, spilling like icy cornices down the terraced rock.'
             },
             {
+              id: 2,
               name: 'Modul 3',
               stars: 3,
               rating: 7.4,
@@ -116,6 +119,7 @@ const createStore = () => {
           trips: ['Honolulu', 'Tokyo', 'Osaka'],
           module: [
             {
+              id: 0,
               name: 'Modul 1',
               stars: 4,
               rating: 8.9,
@@ -124,6 +128,7 @@ const createStore = () => {
                 'Ocean breezes rustle palm trees along the harborfront, while in the cool, mist-shrouded Koʻolau Range, forested hiking trails offer postcard city views. At sunset, cool off with an amble around Magic Island or splash in the ocean at Ala Moana Beach.'
             },
             {
+              id: 1,
               name: 'Modul 2',
               stars: 4,
               rating: 7.8,
@@ -132,6 +137,7 @@ const createStore = () => {
                 'With multicoloured cliffs soaring above a sea-drowned caldera, Santorini looks like a giant slab of layered cake. The main island of Thira will take your breath away with its snow-drift of white Cycladic houses lining the cliff tops and, in module, spilling like icy cornices down the terraced rock.'
             },
             {
+              id: 2,
               name: 'Modul 3',
               stars: 3,
               rating: 7.4,
@@ -154,6 +160,7 @@ const createStore = () => {
           trips: ['Honolulu', 'Tokyo', 'Osaka'],
           module: [
             {
+              id: 0,
               name: 'Modul 1',
               stars: 4,
               rating: 8.9,
@@ -162,6 +169,7 @@ const createStore = () => {
                 'Ocean breezes rustle palm trees along the harborfront, while in the cool, mist-shrouded Koʻolau Range, forested hiking trails offer postcard city views. At sunset, cool off with an amble around Magic Island or splash in the ocean at Ala Moana Beach.'
             },
             {
+              id: 1,
               name: 'Modul 2',
               stars: 4,
               rating: 7.8,
@@ -170,6 +178,7 @@ const createStore = () => {
                 'With multicoloured cliffs soaring above a sea-drowned caldera, Santorini looks like a giant slab of layered cake. The main island of Thira will take your breath away with its snow-drift of white Cycladic houses lining the cliff tops and, in module, spilling like icy cornices down the terraced rock.'
             },
             {
+              id: 2,
               name: 'Modul 3',
               stars: 3,
               rating: 7.4,
