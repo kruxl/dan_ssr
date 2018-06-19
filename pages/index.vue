@@ -1,6 +1,23 @@
 <template>
   <main>
-    <div class="places" ref="places">
+    <div v-if="showCarousel">
+      <carousel :per-page="1"
+        ref="mycarousel"
+        >
+        <slide v-for="user in users" :key="user.name">
+          <img :src="user.img" :alt="user.name"/>
+        </slide>
+        </carousel>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- <div class="places" ref="places">
       <div v-for="place in users" :key="place.name">
         <div class="location">
           <img :src="place.img" :alt="place.name" />
@@ -17,7 +34,7 @@
         </div>
         <hr />
       </div>
-    </div>
+    </div> -->
     <!-- <div class="mapcontain" ref="mapcontain">
       <p>
         <icon-base icon-name="mappin"><icon-map-pin /></icon-base> 
@@ -32,17 +49,26 @@ import { mapState } from 'vuex'
 import { mapGetters } from 'vuex'
 import IconBase from '~/components/IconBase.vue'
 import IconMapPin from '~/components/IconMapPin.vue'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   components: {
     IconBase,
     IconMapPin
   },
+  data() {
+    return {
+      showCarousel: false
+    }
+  },
   computed: {
     ...mapState(['page', 'users']),
     ...mapGetters(['selectedUser'])
   },
    mounted() {
+    this.showCarousel = true
+
+
 //    var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js')
 //    mapboxgl.accessToken =
 //      'pk.eyJ1Ijoic2RyYXNuZXIiLCJhIjoiY2pmZzBqZmptMjI1eTMzbWl1bGExMHppZyJ9.diPXryPOiyMuqcV4mpNOlg'

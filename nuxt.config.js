@@ -32,5 +32,6 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {}
+  build: {},
+  plugins: [{ src: '~plugins/vue-carousel', ssr: false}]
 }

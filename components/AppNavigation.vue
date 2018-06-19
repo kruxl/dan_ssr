@@ -15,7 +15,7 @@
     <div class="nav-wrapper">
       <nav>
         <ul>
-          <nuxt-link v-if="page !== 'index'" to="/"><li>Home</li></nuxt-link>
+          <nuxt-link to="/"><li>Home</li></nuxt-link>
           <nuxt-link to="/cursuri"><li>{{ selectedUser.name | firstName }} ALTE CURSURI</li></nuxt-link>
           <nuxt-link exact to="/cursuri/nume_curs"><li>{{ selectedUser.name | firstName }} CURS</li></nuxt-link>
           <nuxt-link to="/cursuri/detalii_curs"><li>{{ selectedUser.name | firstName }} DESCRIERE</li></nuxt-link>
